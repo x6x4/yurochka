@@ -1,0 +1,230 @@
+\documentclass[14pt]{extarticle}
+\usepackage{extsizes}
+\usepackage{geometry}
+\usepackage{xcolor}
+\geometry{margin=0.5in}
+
+%% for images
+\usepackage{graphicx}
+\graphicspath{ {images/} }
+
+%% language support
+\usepackage[T1,T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english,russian]{babel}
+
+\usepackage{amsmath}
+\usepackage{tikz}
+
+%% hyperrefs
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black
+}
+
+\title{Блядское бдз v15 сука ненавижу тфкп}
+\author{Я нахуй, а кто ещё}
+\date{28.03.2024}
+
+\begin{document}
+\maketitle
+\section{Найти $|z|, Re(z), Im(z)$}
+1) 
+\begin{displaymath}
+    z = {\Bigg(\frac{-3-i\sqrt3}{1-i}\Bigg)}^{96}=(z^*)^{96} 
+\end{displaymath}
+\begin{displaymath}
+    z^* = \frac{-3-i\sqrt3}{1-i} = \frac{3+i\sqrt3}{i-1}=
+    \frac{(3+i\sqrt3)(i+1)}{(i-1)(i+1)} = \frac{3i-\sqrt3+3+i\sqrt3}{-1-1} =
+\end{displaymath}
+\begin{displaymath}
+    =\frac{3-\sqrt3}{-2}+i \ \frac{3+\sqrt3}{-2}=\frac{-3-\sqrt3}{2}+
+    i \ \Bigg(-\frac{3+\sqrt3}{2}\Bigg)
+\end{displaymath}
+\begin{displaymath}
+    |z^*| = \sqrt{\Bigg(-\frac{3-\sqrt3}{2}\Bigg)^2
+    +\Bigg(-\frac{3+\sqrt3}{2}\Bigg)^2}=
+    \sqrt{\frac{9-6\sqrt3+3}{4}+\frac{9+6\sqrt3+3}{4}}=\sqrt{\frac{24}{4}}
+    =\sqrt{6}
+\end{displaymath}
+\begin{displaymath}
+    z^*=\sqrt6\Bigg(-\frac{3-\sqrt3}{2\sqrt6}
+    +i\Bigg(-\frac{3+\sqrt3}{2\sqrt6}\Bigg)\Bigg)
+\end{displaymath}
+\begin{displaymath}
+    \cos\phi = -\frac{3-\sqrt3}{2\sqrt6}, \ 
+    \sin\phi = -\frac{3+\sqrt3}{2\sqrt6}
+\end{displaymath}
+\begin{displaymath}
+    \tg\phi = \frac{\sin\phi}{\cos\phi}=\frac{3+\sqrt3}{3-\sqrt3}
+    =\frac{\sqrt3+1}{\sqrt3-1}=\frac{(\sqrt3+1)^2}{3-1}
+    =\frac{4+2\sqrt{3}}{2}=2+\sqrt3
+\end{displaymath}
+\begin{displaymath}
+    -\frac{\pi}{2} < \arctan \phi < \frac{\pi}{2}
+\end{displaymath}
+\begin{displaymath}
+    \phi=\arctan{(\tan\phi)}-\pi=\arctan{(2+\sqrt3)}-\pi
+\end{displaymath}
+\begin{displaymath}
+    z^*=\sqrt6 \ [\ \cos \ (\arctan{(2+\sqrt3)}-\pi)+ \ 
+    i \ \sin \ (\arctan{(2+\sqrt3)}-\pi) \ ]
+\end{displaymath}\\
+\begin{displaymath}
+    \color{magenta}|z|=(z^*)^{96}=(\sqrt6)^{96}=6^{48}
+\end{displaymath}
+\begin{displaymath}
+    z=(z^*)^{96}= \textcolor{olive}{6^{48} * \cos(96[\arctan{(2+\sqrt3)}-\pi])}
+    + \ i * \textcolor{teal}{6^{48} * \sin(96[\arctan{(2+\sqrt3)}-\pi])}
+\end{displaymath}
+\begin{displaymath}
+    = \textcolor{olive}{Re(z)} + \textcolor{teal}{Im(z)}
+\end{displaymath}
+2)
+\begin{displaymath}
+    z=\sqrt[3]{8-8i}\rightarrow z^3=z^*=8-8i
+\end{displaymath}
+\begin{displaymath}
+    |z^*|=\sqrt{8^2+8^2}=\sqrt{2*8^2}=\sqrt{2}*8=8\sqrt{2}
+\end{displaymath}
+\begin{displaymath}
+    z^*=8\sqrt{2}\Bigg(\frac{1}{\sqrt{2}}+ \ i (-\frac{1}{\sqrt{2}}) \Bigg)
+\end{displaymath}
+\begin{displaymath}
+    \cos\phi = \frac{1}{\sqrt{2}}, \ 
+    \sin\phi =-\frac{1}{\sqrt{2}}\rightarrow\phi=-\frac{\pi}{4}
+\end{displaymath}
+\begin{displaymath}
+    z^*=8\sqrt{2} \ (\ \cos(-\frac{\pi}{4})+ \ 
+    i \ \sin(-\frac{\pi}{4}) \ )
+\end{displaymath}
+\begin{displaymath}
+    \color{magenta}|z|=\sqrt[3]{|z^*|}=\sqrt[3]{8\sqrt{2}}=2\sqrt[6]{2}
+\end{displaymath}
+\begin{displaymath}
+    z=\sqrt[3]{z^*}=
+    2\sqrt[6]{2}\Bigg[\cos\Biggl(\frac{-\frac{\pi}{4}+2\pi k}{n}\Biggr)\Bigg]
+    + i \ \Biggl[\sin\Biggl(\frac{-\frac{\pi}{4}+2\pi k}{n}\Biggr)\Biggr]
+\end{displaymath}
+\begin{displaymath}
+    n=3 \rightarrow k \in \{0;1;2\}
+\end{displaymath}
+$k=0:$
+\begin{displaymath}
+    z_0=2\sqrt[6]{2} \ \Biggl(\cos \frac{-\frac{\pi}{4}+2\pi * 0}{3}+
+    i \ * \sin \frac{-\frac{\pi}{4}+2\pi * 0}{3}\Biggr)=
+\end{displaymath}
+\begin{displaymath}
+    = \textcolor{olive}{2\sqrt[6]{2} \ \cos (-\frac{\pi}{12})}+
+    i * \textcolor{teal}{2\sqrt[6]{2}* \sin (-\frac{\pi}{12})}
+\end{displaymath}
+$k=1:$
+\begin{displaymath}
+    z_0=2\sqrt[6]{2} \ \Biggl(\cos \frac{-\frac{\pi}{4}+2\pi * 1}{3}+
+    i \ * \sin \frac{-\frac{\pi}{4}+2\pi * 1}{3}\Biggr)=
+\end{displaymath}
+\begin{displaymath}
+    = \textcolor{olive}{2\sqrt[6]{2} \ \cos \Biggl(\frac{7\pi}{12}\Biggr)}+
+    i * \textcolor{teal}{2\sqrt[6]{2}* \sin \Biggl(\frac{7\pi}{12}\Biggr)}
+\end{displaymath}
+$k=2:$
+\begin{displaymath}
+    z_0=2\sqrt[6]{2} \ \Biggl(\cos \frac{-\frac{\pi}{4}+2\pi * 2}{3}+
+    i \ * \sin \frac{-\frac{\pi}{4}+2\pi * 2}{3}\Biggr)=
+\end{displaymath}
+\begin{displaymath}
+    = \textcolor{olive}{2\sqrt[6]{2} \ \cos \Biggl(\frac{15\pi}{12}\Biggr)}+
+    i * \textcolor{teal}{2\sqrt[6]{2}* \sin \Biggl(\frac{15\pi}{12}\Biggr)}
+\end{displaymath}
+3)
+Ебучая пизда с гиперболическими функциями. Важные формулы:
+\begin{displaymath}
+    \cosh z = \frac{e^z+e^{-z}}{2} \rightarrow 
+    \cosh^2 z = \frac{e^{2z}+e^{-2z}+2}{4}
+\end{displaymath}
+\begin{displaymath}
+    \sinh z = \frac{e^z-e^{-z}}{2} \rightarrow 
+    \sinh^2 z = \frac{e^{2z}+e^{-2z}-2}{4}
+\end{displaymath}
+$$\cosh ^2 z - \sinh ^2 z = 1$$
+\\
+\begin{displaymath}
+    \cos z =\frac{e^{iz}+e^{-iz}}{2} \rightarrow 
+    \cos^2 z = \frac{e^{2iz}+e^{-2iz}+2}{4}
+\end{displaymath}
+\begin{displaymath}
+    \sin z = \frac{e^{iz}-e^{-iz}}{2i} \rightarrow 
+    \sin^2 z = -\frac{e^{2iz}+e^{-2iz}-2}{4}
+\end{displaymath}
+$$\cos ^2 z + \sin ^2 z = 1$$
+\\
+$\cosh iz = \cos z = \cos (-z)\\ -i \sinh (-z) = i\sinh z = \sin iz\\
+2\cosh^2z - 1 = 2\frac{e^{2z}+2+e^{-2z}}{4} - \frac{2}{2}
+= \frac{e^{2z}+e^{-2z}}{2}=\cosh2z$
+\begin{displaymath}
+    z=\tan(2+i)=\frac{\sin(2+i)}{\cos(2+i)}
+\end{displaymath}
+\begin{displaymath}
+    \sin(2+i) = \sin2\cos i + \sin i \cos 2 = 
+    \sin 2 \cosh 1 + i \sinh 1 \cos 2
+\end{displaymath}
+\begin{displaymath}
+    \cos(2+i) = \cos2\cos i - \sin2 \sin i = 
+    \cos 2 \cosh 1 - i \sin2 \sinh 1
+\end{displaymath}
+\begin{displaymath}
+    z= \frac{x_1x_2+y_1y_2}{x_2^2+y_2^2} + i \frac{x_2y_1-x_1y_2}{x_2^2+y_2^2}
+\end{displaymath}
+\begin{displaymath}
+    = \frac{\sin 2 \cosh 1 \cos 2 \cosh 1 + \sinh 1 \cos 2 (-\sin2 \sinh 1)}
+    {\cos^2 2 \cosh^2 1 + \sin^2 2 \sinh^2 1}
+\end{displaymath}
+\begin{displaymath}
+    + i \ \frac{\cos 2 \cosh 1 \sinh 1 \cos 2 - \sin 2 \cosh 1 (-\sin2 \sinh 1)}
+    {\cos^2 2 \cosh^2 1 + \sin^2 2 \sinh^2 1}
+\end{displaymath}
+\begin{displaymath}
+    = \frac{\sin 2 \cos 2 (\cosh^2 1 - \sinh^2 1)}
+    {\cos^2 2 \cosh^2 1 + (1 - \cos^2 2) \sinh^2 1}
+\end{displaymath}
+\begin{displaymath}
+    + i \ \frac{\cosh 1 \sinh 1(\cos^2 2 + \sin^2 2)}
+    {\cos^2 2 \cosh^2 1 + (1 - \cos^2 2) \sinh^2 1}
+\end{displaymath}
+\begin{displaymath}
+    = \frac{\sin 2 \cos 2}
+    {\cos^2 2 (\cosh^2 1 - \sinh^2 1)+\sinh^2 1}
+\end{displaymath}
+\begin{displaymath}
+    + i \ \frac{\cosh 1 \sinh 1}
+    {\cos^2 2 (\cosh^2 1 - \sinh^2 1)+\sinh^2 1}
+\end{displaymath}
+\begin{displaymath}
+    = \frac{\sin 2 \cos 2 + i \ \cosh 1 \sinh 1}
+    {\cos^2 2 +\sinh^2 1}
+\end{displaymath}
+\begin{displaymath}
+    = \frac{\sin 4 + i \ \sinh 2}
+    {2\cos^2 2 +2(\cosh^2 1-1)}
+\end{displaymath}
+\begin{displaymath}
+    = \frac{\sin 4 + i \ \sinh 2}
+    {2\cos^2 2 -1 +2\cosh^2 1-1}
+\end{displaymath}
+\begin{displaymath}
+    = \frac{\sin 4 + i \ \sinh 2}
+    {\cos4 + \cosh 2}
+\end{displaymath}
+\begin{displaymath}
+    = \textcolor{olive}{\frac{\sin 4}{\cos4 + \cosh 2}}
+    +i \ \textcolor{teal}{\frac{ \sinh 2}{\cos4 + \cosh 2}}
+\end{displaymath}
+\begin{displaymath}
+    \color{magenta}|z|=\sqrt{\frac{\sin^2 4+\sinh^2 2}{(\cos4 + \cosh 2)^2}}=
+    \frac{\sqrt{\sin^2 4+\sinh^2 2}}{|\cos4 + \cosh 2|}
+\end{displaymath}
+\end{document}
